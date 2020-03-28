@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "ESLint Target",
+  "description": "Lint target options for Build Facade.",
+  "type": "object",
+  "properties": {
+    "cache": {
+      "type": "boolean",
+      "description": "Operate only on changed files."
+    },
+    "cacheLocation": {
+      "type": "string",
+      "description": "Name of the file or directory where the cache will be stored."
+    },
+    "configFile": {
+      "type": "string",
+      "description": "The configuration file to use. If useEslintrc is true or not specified, this configuration will be merged with any configuration defined in .eslintrc.* files, with options in this configuration having precedence."
+    },
+    "files": {
+      "type": "array",
+      "description": "Files to include in linting.",
+      "default": ["src/**/*.ts"],
+      "items": {
+        "type": "string"
+      }
+    },
+    "fix": {
+      "type": "boolean",
+      "description": "Fixes linting errors (may overwrite linted files)."
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "checkstyle",
+        "codeframe",
+        "compact",
+        "html",
+        "jslint-xml",
+        "json-with-metadata",
+        "json",
+        "junit",
+        "stylish",
+        "table",
+        "tap",
+        "unix",
+        "visualstudio"
+      ]
+    },
+    "force": {
+      "type": "boolean",
+      "description": "Succeeds even if there was linting errors."
+    },
+    "reportUnusedDisableDirectives": {
+      "type": "boolean",
+      "description": "When set to true, adds reported errors for unused eslint-disable directives when no problems would be reported in the disabled area anyway."
+    },
+    "silent": {
+      "type": "boolean",
+      "description": "Show output text.",
+      "default": false
+    },
+    "useEslintrc": {
+      "type": "boolean",
+      "description": "Set to false to disable use of .eslintrc files."
+    }
+  },
+  "additionalProperties": false,
+  "required": []
+}

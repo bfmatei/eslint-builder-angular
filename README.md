@@ -1,0 +1,1 @@
+# ESLint builder for Angular
