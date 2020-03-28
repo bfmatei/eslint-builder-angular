@@ -7,8 +7,8 @@ Run [ESLint](https://eslint.org/) from Angular CLI.
 2. Install the builder: `npm install @bmatei/stylelint-builder-angular --save-dev`
 3. Add the builder to `angular.json`:
 ```
-"stylelint": {
-    "builder": "@speedy/build-angular:stylelint"
+"eslint": {
+  "builder": "@bmatei/eslint-builder-angular:lint"
 }
 ```
 4. Run stylelint: `ng run <project>:stylelint`
