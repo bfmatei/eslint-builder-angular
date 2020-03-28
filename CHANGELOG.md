@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/bfmatei/eslint-builder-angular/compare/v1.0.1...v1.0.2) (2020-03-28)
+
+
+### Bug Fixes
+
+* Fix readme ([10f33ed](https://github.com/bfmatei/eslint-builder-angular/commit/10f33ed183ed72302011d2a145374dffbe9536ba))
+
 ## [1.0.1](https://github.com/bfmatei/eslint-builder-angular/compare/v1.0.0...v1.0.1) (2020-03-28)
 
 
