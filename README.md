@@ -1,4 +1,3 @@
-
 # ESLint builder for Angular  
 Run [ESLint](https://eslint.org/) from Angular CLI.
 
@@ -26,10 +25,11 @@ Some options correspond to the ESLint config parameters. By default, these do no
     - Default: `["src/**/*.ts"]` 
 5. `fix`
     - [Reference: fix](https://eslint.org/docs/developer-guide/nodejs-api#cliengine)
-6. `format`
-    - [Reference: format](https://eslint.org/docs/developer-guide/nodejs-api#cliengine)
-7. `force`
+6. `force`
     - Ignore any errors and warnings and return a success status.
+    - Default: `false`
+7. `format`
+    - [Reference: format](https://eslint.org/docs/developer-guide/nodejs-api#cliengine)
 8. `reportUnusedDisableDirectives`
     - [Reference: reportUnusedDisableDirectives](https://eslint.org/docs/developer-guide/nodejs-api#cliengine)
 9. `silent`
