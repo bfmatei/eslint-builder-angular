@@ -1,29 +1,16 @@
 import * as eslint from 'eslint';
 
-import { BuilderOptions, LintResult } from './builder.model';
+import { BuilderOptions, LintReport } from './builder.model';
+import { getWarningErrorsFlags } from './get-warning-errors-flags';
 
-enum Severity {
-  WARN = 1,
-  ERROR = 2
-}
-
-export function lint(projectEslint: typeof eslint, options: BuilderOptions): LintResult {
+export function lint(projectEslint: typeof eslint, options: BuilderOptions): LintReport {
   const cliEngine = new projectEslint.CLIEngine(options as Partial<eslint.CLIEngine.Options>);
 
   const formatter = cliEngine.getFormatter(options.format as string);
 
   const report = cliEngine.executeOnFiles(options.files as string[]);
 
-  const warningErrorsFlags = report.results.map((result) => result.messages).flat().reduce(
-    (acc, message) => ({
-      hasWarnings: acc.hasWarnings || message.severity === Severity.WARN,
-      hasErrors: acc.hasErrors || message.severity === Severity.ERROR
-    }),
-    {
-      hasWarnings: false,
-      hasErrors: false
-    }
-  );
+  const warningErrorsFlags = getWarningErrorsFlags(report);
 
   return {
     output: formatter(report.results),
