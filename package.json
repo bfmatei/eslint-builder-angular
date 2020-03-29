@@ -2,6 +2,14 @@
   "name": "@bmatei/eslint-builder-angular",
   "version": "0.0.0-development",
   "description": "ESLint builder for Angular.",
+  "keywords": [
+    "angular",
+    "angular-cli",
+    "codelyzer",
+    "eslint",
+    "lint",
+    "typescript"
+  ],
   "author": "Bogdan Matei <bogdan@matei.dev>",
   "license": "MIT",
   "homepage": "https://github.com/bfmatei/eslint-builder-angular#readme",
