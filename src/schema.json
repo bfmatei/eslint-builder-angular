@@ -50,6 +50,20 @@
         "visualstudio"
       ]
     },
+    "ignorePattern": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      ],
+      "description": "Glob patterns for paths to ignore."
+    },
     "reportUnusedDisableDirectives": {
       "type": "boolean",
       "description": "When set to true, adds reported errors for unused eslint-disable directives when no problems would be reported in the disabled area anyway."
@@ -58,10 +72,6 @@
       "type": "boolean",
       "description": "Show output text.",
       "default": false
-    },
-    "tsConfig": {
-      "type": "string",
-      "description": "Path to TypeScript configuration."
     },
     "useEslintrc": {
       "type": "boolean",

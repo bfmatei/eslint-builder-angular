@@ -1,12 +1,12 @@
 import { BuilderContext, BuilderOutput } from '@angular-devkit/architect';
 
 import { BuilderOptions } from './builder.model';
+import { getShouldLog } from './get-should-log';
 import { lint } from './lint';
 import { loadProjectEslint } from './load-project-eslint';
-import { getShouldLog } from './get-should-log';
+import { normalizeRootPath } from './normalize-root-path';
 import { printOutput } from './print-output';
 import { printInput } from './print-input';
-import { normalizeRootPath } from './normalize-root-path';
 
 export async function builder(options: BuilderOptions, context: BuilderContext): Promise<BuilderOutput> {
   const normalizedOptions = normalizeRootPath(options, context);
