@@ -59,6 +59,10 @@
       "description": "Show output text.",
       "default": false
     },
+    "tsConfig": {
+      "type": "string",
+      "description": "Path to TypeScript configuration."
+    },
     "useEslintrc": {
       "type": "boolean",
       "description": "Set to false to disable use of .eslintrc files."

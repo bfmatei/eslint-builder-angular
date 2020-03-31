@@ -1,6 +1,8 @@
 # ESLint builder for Angular  
 Run [ESLint](https://eslint.org/) from Angular CLI.
 
+Please note that this builder runs ESLint using the CLI engine and not by creating the TS program directly. It's still pretty experimental.
+
 ## Install
 1. Install ESLint: `npm install eslint --save-dev`
 2. Install the builder: `npm install @bmatei/stylelint-builder-angular --save-dev`

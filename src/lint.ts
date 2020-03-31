@@ -1,7 +1,7 @@
 import * as eslint from 'eslint';
 
 import { BuilderOptions, LintReport } from './builder.model';
-import { getWarningErrorsFlags } from './get-warning-errors-flags';
+import { getReportFlags } from './get-report-flags';
 
 export function lint(projectEslint: typeof eslint, options: BuilderOptions): LintReport {
   const cliEngine = new projectEslint.CLIEngine(options as Partial<eslint.CLIEngine.Options>);
@@ -10,11 +10,15 @@ export function lint(projectEslint: typeof eslint, options: BuilderOptions): Lin
 
   const report = cliEngine.executeOnFiles(options.files as string[]);
 
-  const warningErrorsFlags = getWarningErrorsFlags(report);
+  const reportFlags = getReportFlags(report, options);
+
+  if (options.fix) {
+    eslint.CLIEngine.outputFixes(report);
+  }
 
   return {
     output: formatter(report.results),
-    ...warningErrorsFlags,
-    isSuccess: !warningErrorsFlags.hasWarnings && !warningErrorsFlags.hasErrors
+    ...reportFlags,
+    isSuccess: options.force === true || (!reportFlags.hasWarnings && !reportFlags.hasErrors)
   };
 }
